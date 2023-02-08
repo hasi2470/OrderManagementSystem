@@ -18,7 +18,7 @@ public partial class Customer
     public string Name { get; set; } = null!;
 
     [StringLength(100)]
-    public string? Adderess { get; set; }
+    public string? Address { get; set; }
 
     [Column("Contact_num")]
     [StringLength(13)]
