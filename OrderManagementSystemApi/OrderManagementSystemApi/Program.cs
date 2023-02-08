@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using OrderManagementSystemApi.Dal;
+using OrderManagementSystemApi.Dal.Repositories;
+using OrderManagementSystemApi.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,7 +16,7 @@ builder.Services.AddDbContext<OrderManagementDbContext>(option =>
     option.UseSqlServer(builder.Configuration.GetConnectionString("ConnectionString"));
 });
 
-
+builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 
 var app = builder.Build();
 
